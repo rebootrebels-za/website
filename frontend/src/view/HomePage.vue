@@ -1,18 +1,24 @@
 <template>
-    <h2>Home Page</h2>
+    <Hero />
+    <About />
 </template>
   
-  <script>
-  export default {
-    name: 'HomePage',
-    props: {
-      msg: String
-    }
-  }
-  </script>
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
-  <style scoped>
+<script>
 
-  </style>
+    import Hero from '../components/Hero.vue';
+    import About from '../components/About.vue';
+
+    export default {
+        name: 'HomePage',
+        components: {
+            Hero,
+            About
+        }
+    }
+</script>
+  
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>
   

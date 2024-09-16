@@ -1,69 +1,90 @@
 <template>
-    <div class="header">
-        <div class="header__brand-text">
-            <h1 class="brand-text__brand-name">
-                <router-link to="/" class="link no-underline">Reboot Rebels</router-link>
-            </h1>
-            <sub class="brand-text__slogan">
-                Tech Community for Every Skill Level
-            </sub>
+    <header>
+        <h1 class="header__title">
+            <router-link to="/" class="link">Reboot Rebels</router-link>
+        </h1>
+        <div class="header__socials on-list">
+            <a href="https://mastodon.social/@rebootrebels" class="link"><i class="fa-brands fa-mastodon"></i></a>
+            <a href="https://discord.gg/fTmaQAKxp4" class="link"><i class="fa-brands fa-discord"></i></a>
         </div>
-        <div class="header__socials hide">
-            <a href="#" class="link socials__link"><i class="fa-brands fa-mastodon socials__icon"></i></a>
-            <a href="#" class="link socials__link"><i class="fa-brands fa-discourse socials__icon"></i></a>
-            <a href="#" class="link socials__link"><i class="fa-solid fa-comment-dots socials__icon"></i></a>
+        <div class="header__navigation">
+            <i class="fa-solid fa-bars hamburger-menu link" @click="burgerShow(); changeBurgerMenuIcon()"></i>
+            <div class="navigation__menu hide">
+                <ul class="menu__list on-list">
+                    <li class="menu__item"><router-link to="/" class="link">Home</router-link></li>
+                    <li class="menu__item"><router-link to="/about" class="link">About</router-link></li>
+                    <li class="menu__item"><router-link to="/blog" class="link">Blog</router-link></li>
+                    <li class="menu__item"><router-link to="/contact" class="link">Contact</router-link></li>
+                    <li class="menu__item"><router-link to="/services" class="link">Services</router-link></li>
+                </ul>
+            </div>
         </div>
-        <div class="header__nav">
-            <router-link to="/login" class="link nav__login">Login</router-link>
-            <router-link to="/register" class="link nav__register">Register</router-link>
-        </div>
-    </div>
+    </header>
 </template>
   
 <script>
   export default {
     name: 'HeaderComponent',
+    methods: {
+    burgerShow() {
+        const menu = document.querySelector('.navigation__menu');
+        menu.classList.toggle('hide');
+    },
+    changeBurgerMenuIcon() {
+        const icon = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.navigation__menu');
+        if (navMenu.classList.contains('hide')) {
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-x');
+        } else {
+            icon.classList.add('fa-x');
+            icon.classList.remove('fa-bars');
+        }
+    }
   }
+}
 </script>
   
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .header {
+    header {
         display: flex;
+        background-color: var(--secondary-color);
         justify-content: space-between;
         align-items: center;
-        padding: 1rem;
-        background-color: var(--primary-color);
-        color: white;
+        padding: 1.5rem; /*Consider changing the scale*/
+        border: 2px solid var(--primary-color);
+        border-radius: 10px;
+        position: relative;
     }
-    .brand-text__brand-name {
-        margin: 0;
+    .header__socials {
+        position: absolute;
+        left: 5rem; /*How does this scale??*/
+        bottom: -20px;
+        
     }
-    .brand-text__slogan {
-        font-size: 0.8rem;
+    .on-list {
+        border: 2px solid var(--primary-color);
+        border-radius: 10px;
+        padding: 0.5rem;
+        background-color: var(--secondary-color);
+        display: flex;
+        gap: 2rem;
     }
-    .nav__login {
-        margin-right: 1rem;
-    }
-    .nav__register {
-        margin-right: 1rem;
-    }
-    .link {
-        color: white;
-        text-decoration: none;
-    }
-    .link:hover {
-        text-decoration: underline;
-    }
-    .no-underline:hover {
-        text-decoration: none;
-    }
-    .socials__icon {
-        margin-right: 1rem;
+    .hamburger-menu {
+        color: var(--primary-color);
         font-size: 1.5rem;
+        padding-right: 10px;
     }
-    .socials__link {
-        color: white;
+     .navigation__menu {
+        position: absolute;
+        right: 3rem;
+        bottom: -20px;
+     }
+    .menu__list {
+        list-style-type: none;
+        display: flex;
+        gap: 1rem;
     }
 </style>
   
