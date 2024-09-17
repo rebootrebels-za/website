@@ -5,7 +5,7 @@
         </h1>
         <div class="header__socials on-list">
             <a href="https://mastodon.social/@rebootrebels" class="link"><i class="fa-brands fa-mastodon"></i></a>
-            <a href="https://discord.gg/fTmaQAKxp4" class="link"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://discord.rebootrebels.co.za" class="link"><i class="fa-brands fa-discord"></i></a>
         </div>
         <div class="header__navigation">
             <i class="fa-solid fa-bars hamburger-menu link" @click="burgerShow(); changeBurgerMenuIcon()"></i>

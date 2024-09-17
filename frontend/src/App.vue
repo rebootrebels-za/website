@@ -31,6 +31,7 @@
     :root {
         --primary-color: hsl(281, 61%, 52%);
         --secondary-color: hsl(0, 0%, 20%);
+        --tertiary-color: hsl(0, 0%, 100%);
         --primary-text-color-dark: hsl(0, 0%, 20%);
         --primary-text-color-light: hsl(0, 0%, 100%);
     }
@@ -47,6 +48,11 @@
     .link {
         color: white;
         text-decoration: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .pointer {
         &:hover {
             cursor: pointer;
         }
