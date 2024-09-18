@@ -3,7 +3,6 @@
         <h2 class="offer__title">
             What We Offer
         </h2>
-        <p class="offer__paragraph"></p>
         <ul class="offer__list">
             <li class="offer__item"><i class="fa-solid fa-people-group"></i>Inclusive Community</li>
             <li class="offer__item"><i class="fa-solid fa-laptop-file"></i>Educational Resource Pooling</li>
@@ -20,30 +19,38 @@ export default {
 </script>
 
 <style scoped>
-    .offer {
-        padding: 2rem;
-        border: 2px solid var(--primary-color);
-    }
-    .offer__title {
-        text-align: center;
-        color: var(--primary-text-color-light);
-    }
-    .offer__paragraph{
-        text-align: center;
-        margin: 0 2rem;
-        color: var(--primary-text-color-light);
-    }
-    .offer__list {
-        list-style-type: none;
-        padding: 0;
-    }
-    .offer__item {
-        display: flex;
-        align-items: center;
-        margin: 1rem 0;
-        color: var(--primary-text-color-light);
-    }
-    .offer__item i {
-        margin-right: 1rem;
-    }
+.offer {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    margin: 1rem;
+    color: var(--primary-text-color-light);
+}
+.offer__title {
+    color: var(--secondary-color);
+    text-align: center;
+}
+.offer__item {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--secondary-color);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: var(--primary-color-light);
+    color: var(--primary-text-color);
+    font-weight: bold;
+}
+.offer__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: center;
+    list-style-type: none;
+}
+.offer__item i {
+    margin-right: 5px;
+    color: var(--primary-text-color-light);
+}
 </style>

@@ -1,27 +1,23 @@
 <template>
-    <div class="footer">
-        <div class="footer__sitemap">
-            
-        </div>
-        <div class="footer__contact-information">
-
-        </div>
-        <div class="footer__logo">
-            
-        </div>
-    </div>
+    <footer class="footer">
+        <p>&copy; {{ new Date().getFullYear() }} Reboot Rebels</p>
+    </footer>
 </template>
-  
+
 <script>
-  export default {
+export default {
     name: 'FooterComponent',
-  }
+}
 </script>
-  
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
-    .footer {
-        background-color: var(--primary-color);
-    }
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color-light);
+    padding: 20px;
+    text-align: center;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    margin-top: 20px;
+}
 </style>
-  

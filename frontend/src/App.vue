@@ -30,7 +30,7 @@
 
     :root {
         --primary-color: hsl(281, 61%, 52%);
-        --secondary-color: hsl(0, 0%, 20%);
+        --secondary-color: hsl(0, 0%, 1%);
         --tertiary-color: hsl(0, 0%, 100%);
         --primary-text-color-dark: hsl(0, 0%, 20%);
         --primary-text-color-light: hsl(0, 0%, 100%);

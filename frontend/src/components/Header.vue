@@ -63,6 +63,10 @@
         bottom: -20px;
         
     }
+    .header__socials a:hover {
+        cursor: pointer;
+        color: var(--primary-color);
+    }
     .on-list {
         border: 2px solid var(--primary-color);
         border-radius: 10px;

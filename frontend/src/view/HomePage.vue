@@ -1,30 +1,23 @@
 <template>
-    <!-- <Hero /> -->
-    <sideHero />
+    <Hero />
     <Offer />
-    <Mission />
 </template>
   
 <script>
 
-    // import Hero from '../components/Hero.vue';
-    import sideHero from '../components/side-panel/Hero.vue';
-    import Mission from '../components/Mission.vue';
+    import Hero from '../components/side-panel/Hero.vue';
     import Offer from '../components/Offer.vue';
 
     export default {
         name: 'HomePage',
-        components: {
-            // Hero,
-            Mission, 
+        components: { 
             Offer,
-            sideHero
+            Hero
         }
     }
 </script>
   
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>
   
