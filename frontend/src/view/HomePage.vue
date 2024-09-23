@@ -1,18 +1,15 @@
 <template>
-    <Hero />
-    <Offer />
+    <Header />
 </template>
   
 <script>
 
-    import Hero from '../components/side-panel/Hero.vue';
-    import Offer from '../components/Offer.vue';
+    import Header from '../components/Header.vue';
 
     export default {
         name: 'HomePage',
         components: { 
-            Offer,
-            Hero
+            Header
         }
     }
 </script>

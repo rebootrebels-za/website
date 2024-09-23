@@ -1,94 +1,50 @@
 <template>
-    <header>
-        <h1 class="header__title">
-            <router-link to="/" class="link">Reboot Rebels</router-link>
-        </h1>
-        <div class="header__socials on-list">
-            <a href="https://mastodon.social/@rebootrebels" class="link"><i class="fa-brands fa-mastodon"></i></a>
-            <a href="https://discord.rebootrebels.co.za" class="link"><i class="fa-brands fa-discord"></i></a>
-        </div>
-        <div class="header__navigation">
-            <i class="fa-solid fa-bars hamburger-menu link" @click="burgerShow(); changeBurgerMenuIcon()"></i>
-            <div class="navigation__menu hide">
-                <ul class="menu__list on-list">
-                    <li class="menu__item"><router-link to="/" class="link">Home</router-link></li>
-                    <li class="menu__item"><router-link to="/about" class="link">About</router-link></li>
-                    <li class="menu__item"><router-link to="/blog" class="link">Blog</router-link></li>
-                    <li class="menu__item"><router-link to="/contact" class="link">Contact</router-link></li>
-                    <li class="menu__item"><router-link to="/services" class="link">Services</router-link></li>
-                </ul>
-            </div>
-        </div>
+    <header class="header">
+        <h1 class="header__title">Reboot Rebels</h1>
+        <section class="header__socials">
+            <a href="https://www.facebook.com" class="header__socials-link">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="https://www.twitter.com" class="header__socials-link">
+                <i class="fa-brands fa-mastodon"></i>
+            </a>
+        </section>
     </header>
 </template>
-  
+
 <script>
-  export default {
+export default {
     name: 'HeaderComponent',
-    methods: {
-    burgerShow() {
-        const menu = document.querySelector('.navigation__menu');
-        menu.classList.toggle('hide');
-    },
-    changeBurgerMenuIcon() {
-        const icon = document.querySelector('.hamburger-menu');
-        const navMenu = document.querySelector('.navigation__menu');
-        if (navMenu.classList.contains('hide')) {
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-x');
-        } else {
-            icon.classList.add('fa-x');
-            icon.classList.remove('fa-bars');
-        }
-    }
-  }
 }
 </script>
-  
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
-    header {
-        display: flex;
-        background-color: var(--secondary-color);
-        justify-content: space-between;
-        align-items: center;
-        padding: 1.5rem; /*Consider changing the scale*/
-        border: 2px solid var(--primary-color);
-        border-radius: 10px;
-        position: relative;
-    }
-    .header__socials {
-        position: absolute;
-        left: 5rem; /*How does this scale??*/
-        bottom: -20px;
-        
-    }
-    .header__socials a:hover {
-        cursor: pointer;
-        color: var(--primary-color);
-    }
-    .on-list {
-        border: 2px solid var(--primary-color);
-        border-radius: 10px;
-        padding: 0.5rem;
-        background-color: var(--secondary-color);
-        display: flex;
-        gap: 2rem;
-    }
-    .hamburger-menu {
-        color: var(--primary-color);
-        font-size: 1.5rem;
-        padding-right: 10px;
-    }
-     .navigation__menu {
-        position: absolute;
-        right: 3rem;
-        bottom: -20px;
-     }
-    .menu__list {
-        list-style-type: none;
-        display: flex;
-        gap: 1rem;
-    }
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.45)),url(../assets/img/header-background.png) no-repeat center center/cover;
+    height: 100%;
+    width: 100%;
+}
+.header__title {
+    color: var(--primary-text-color-light);
+    font-size: 3rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.header__socials {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.header__socials-link {
+    color: var(--primary-text-color-light);
+    font-size: 2rem;
+    margin: 0 10px;
+}
 </style>
-  
