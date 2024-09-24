@@ -14,12 +14,12 @@
   export default {
     name: 'App',
     components: {
-      Navigation,
-      Footer
+        Navigation,
+        Footer
     }
   };
   </script>
-  
+
   <style>
   /* Add some global styles if needed */
     * { 

@@ -18,6 +18,10 @@ export default {
     text-align: center;
     border: 2px solid var(--primary-color);
     border-radius: 10px;
-    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
 }
 </style>

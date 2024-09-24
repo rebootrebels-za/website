@@ -2,11 +2,30 @@
     <nav class="navigation">
         <checkbox class="fa-solid fa-bars navigation__menu-checkbox pointer color-primary" @click="toggleMenu"></checkbox>
         <div class="overlay hide">
-            <ul class="navigation__list">
-                <li class="navigation__list__item"><router-link to="/">Home</router-link></li>
-                <li class="navigation__list__item"><router-link to="/about">About</router-link></li>
-                <li class="navigation__list__item"><router-link to="/contact">Contact</router-link></li>
-            </ul>
+            <div class="overlay__sections">
+                <div class="overlay__section">
+                    <h3 class="navigation__title">Quick Index</h3>
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <router-link to="/" class="link" @click="closeMenu">Home</router-link>
+                        </li>
+                        <li class="navigation__item">
+                            <router-link to="/about" class="link" @click="closeMenu">About</router-link>
+                        </li>
+                        <li class="navigation__item">
+                            <router-link to="/contact" class="link" @click="closeMenu">Contact</router-link>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="overlay__section">
+                    <h3 class="navigation__title">Services</h3>
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <router-link to="/repair" class="link" @click="closeMenu">Hardware Repair</router-link>
+                        </li>
+                    </ul>
+                </div>                                               -->
+            </div>
         </div>
     </nav>
 </template>
@@ -33,6 +52,14 @@ export default {
                 checkbox.classList.remove('color-secondary');
                 checkbox.classList.add('color-primary');
             }
+        },
+        closeMenu() {
+            this.showMenu = false;
+            const menu = document.querySelector('.overlay');
+            const checkbox = document.querySelector('.navigation__menu-checkbox');
+            menu.classList.add('hide');
+            checkbox.classList.remove('color-secondary');
+            checkbox.classList.add('color-primary');
         }
     }
 }
@@ -51,9 +78,9 @@ export default {
     padding: 10px;
 }
 .navigation__menu-checkbox{
-    font-size: 1.5rem;
+    font-size: 3rem;
     position: absolute;
-    right: 10px;
+    right: 20px;
     top: 10px;
     z-index: 2;
 }
@@ -66,22 +93,27 @@ export default {
     left: 0;
     z-index: 1;
 }
-.navigation__list {
+.overlay__sections {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100%;
+    border: 2px solid var(--secondary-color);
 }
-.navigation__list__item {
+.overlay__section {
+    padding: 20px;
+    text-align: center;
+}
+.navigation__list{
     list-style: none;
-    margin: 10px;
 }
-.navigation__list__item a {
+.navigation__title {
     color: var(--tertiary-color);
-    text-decoration: none;
+    font-size: 1.5rem;
 }
-.navigation__list__item a:hover {
-    color: var(--primary-text-color-dark);
+.navigation__item {
+    margin: 10px 0;
+    font-size: 1.2rem;
 }
 </style>
