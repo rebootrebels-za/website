@@ -7,9 +7,9 @@
                 <i class="fa-brands fa-discord"></i>
             </a>
         </section>
-        <section class="header__blog">
+        <!-- <section class="header__blog">
             <router-link to="/blog" class="header__blog-link">Read Our Blog</router-link>
-        </section>
+        </section> -->
     </header>
 </template>
 
